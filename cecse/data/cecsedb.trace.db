@@ -1,0 +1,31 @@
+07-22 17:46:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID_USER" no encontrada
+Column "ID_USER" not found; SQL statement:
+CREATE TABLE `user` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) DEFAULT NULL,
+  `LAST_NAME` varchar(255) DEFAULT NULL,
+  `LOGIN` varchar(255) DEFAULT NULL,
+  `PASSWORD` varchar(255) DEFAULT NULL,
+  `EMAIL` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_USER`)
+) [42122-180]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:636)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:74)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:107)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:72)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:171)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:78)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:185)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
